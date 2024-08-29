@@ -61,7 +61,7 @@ int main(void) {
             printf("Insira o código do funcionário: ");
             scanf("%d", &codigo);
             if (codigo < 1 || codigo > 1000 || isNumberInArray(codigos, 10, codigo)) {
-                printf("\nCódigo inválido!\n");
+                printf("\nCódigo precisa ser numérico e estar entre 1 e 1000\n");
             }
         } while (codigo < 1 || codigo > 1000 || isNumberInArray(codigos, 10, codigo));
 
@@ -70,7 +70,7 @@ int main(void) {
             printf("\n[1 : Horista | 2 : Diarista | 3 : Mensalista] : ");
             scanf("%d", &tipoSalario);
             if (tipoSalario < 1 || tipoSalario > 3) {
-                printf("\nTipo de salário inválido!\n");
+                printf("\nTipo de salário inválido. Escolha um número!\n");
             }
         } while (tipoSalario < 1 || tipoSalario > 3);
 
@@ -81,12 +81,12 @@ int main(void) {
             scanf("%lf", &salarioBase);
             if (tipoSalario == 1 && (salarioBase < 6 || salarioBase > 100)) {
                 salarioInvalido = true;
-                printf("\nSalário base inválido!\n");
+                printf("\nSalário base precisa estar entre 6 e 100\n");
             } else if (tipoSalario == 2 && (salarioBase < 150 || salarioBase > 400)) {
-                printf("\nSalário base inválido!\n");
+                printf("\nSalário base precisa estar entre 150 e 400\n");
                 salarioInvalido = true;
             } else if (tipoSalario == 3 && (salarioBase < 1400 || salarioBase > 40000)) {
-                printf("\nSalário base inválido!\n");
+                printf("\nSalário base precisa estar entre 1400 e 40000\n");
                 salarioInvalido = true;
             }
         } while (salarioInvalido == true);
