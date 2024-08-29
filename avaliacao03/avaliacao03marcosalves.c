@@ -33,6 +33,15 @@ void Funcionarios_init(Funcionarios *self, int codigo, int tipoSalario, double s
     self->salarioLiquido = self->salarioBruto - self->inss - self->impostoRenda + self->salarioFamilia;
 }
 
+bool isNumberInArray(int arr[], const int size, const int target) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == target) {
+            return true;
+        }
+    }
+    return false;
+}
+
 int main(void) {
     Funcionarios funcionario[10];
     int codigos[10];
@@ -51,10 +60,10 @@ int main(void) {
         do {
             printf("Insira o código do funcionário: ");
             scanf("%d", &codigo);
-            if (codigo < 1 || codigo > 1000) {
+            if (codigo < 1 || codigo > 1000 || isNumberInArray(codigos, 10, codigo)) {
                 printf("\nCódigo inválido!\n");
             }
-        } while (codigo < 1 || codigo > 1000);
+        } while (codigo < 1 || codigo > 1000 || isNumberInArray(codigos, 10, codigo));
 
         do {
             printf("Insira o tipo de salário: ");
