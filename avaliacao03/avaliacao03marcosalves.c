@@ -120,14 +120,14 @@ int main(void) {
         }
     }
 
-    printf("\n| Código | Tipo    | Salário Base | Filhos | Salário Bruto |   INSS   | Imposto Renda | Salário Família | Salário Líquido |\n");
-    printf("|--------|---------|--------------|--------|---------------|----------|----------------|-----------------|-----------------|\n");
+    printf("\n| Código | Tipo      | Salário Base | Filhos | Salário Bruto |   INSS   | Imposto Renda  | Salário Família | Salário Líquido |\n");
+    printf("|--------|-----------|--------------|--------|---------------|----------|----------------|-----------------|-----------------|\n");
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
             if (funcionario[j].codigo == codigos[i]) {
                 printf("| %6d | %-8s| %12.2lf | %6d | %13.2lf | %8.2lf | %14.2lf | %15.2lf | %15.2lf |\n",
                        funcionario[j].codigo,
-                       funcionario[j].tipoSalario == 1 ? "Horista" : funcionario[j].tipoSalario == 2 ? "Diarista" : "Mensalista",
+                       funcionario[j].tipoSalario == 1 ? "Horista   " : funcionario[j].tipoSalario == 2 ? "Diarista  " : "Mensalista",
                        funcionario[j].salarioBase,
                        funcionario[j].numeroFilhos,
                        funcionario[j].salarioBruto,
@@ -138,8 +138,8 @@ int main(void) {
             }
         }
     }
-    
-    printf("\n| Totais |         |              |        | %13.2lf | %8.2lf | %14.2lf | %15.2lf | %15.2lf |\n",
+
+    printf("\n| Totais |           |              |        | %13.2lf | %8.2lf | %14.2lf | %15.2lf | %15.2lf |\n",
            totalSalarioBruto, totalInss, totalImpostoRenda, totalSalarioFamilia, totalSalarioLiquido);
 
     return 0;
