@@ -101,7 +101,6 @@ int main(void) {
         totalSalarioLiquido += funcionario[i].salarioLiquido;
     }
 
-    // Ordenação dos funcionários pelo código
     for (int i = 0; i < 10; i++) {
         for (int j = i + 1; j < 10; j++) {
             if (codigos[i] > codigos[j]) {
@@ -112,7 +111,6 @@ int main(void) {
         }
     }
 
-    // Exibindo os resultados em formato de tabela
     printf("\n| Código | Tipo    | Salário Base | Filhos | Salário Bruto |   INSS   | Imposto Renda | Salário Família | Salário Líquido |\n");
     printf("|--------|---------|--------------|--------|---------------|----------|----------------|-----------------|-----------------|\n");
     for (int i = 0; i < 10; i++) {
@@ -131,8 +129,7 @@ int main(void) {
             }
         }
     }
-
-    // Totais
+    
     printf("\n| Totais |         |              |        | %13.2lf | %8.2lf | %14.2lf | %15.2lf | %15.2lf |\n",
            totalSalarioBruto, totalInss, totalImpostoRenda, totalSalarioFamilia, totalSalarioLiquido);
 
